@@ -1,0 +1,8 @@
+.env
+warehouse.db
+raw/
+processed/
+logs/
+__pycache__/
+*.pyc
+dashboard/node_modules/

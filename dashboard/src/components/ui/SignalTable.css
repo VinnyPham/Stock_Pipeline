@@ -1,0 +1,58 @@
+.signal-table { width: 100%; }
+
+.sig-row {
+  display: grid;
+  grid-template-columns: 46px 58px 1fr 1fr;
+  gap: 0.4rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  font-size: 11px;
+}
+
+.sig-row:last-child { border-bottom: none; }
+
+.sig-row-head {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border-hi);
+}
+
+.sig-sym {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.06em;
+}
+
+.sig-sym.is-selected { color: var(--amber); }
+
+.sig-date {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.sig-pill {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1px;
+  border: 1px solid;
+}
+
+.sig-pill.overbought { color: var(--red);   border-color: var(--red-dim);   background: rgba(255,77,106,0.06); }
+.sig-pill.oversold   { color: var(--green); border-color: var(--green-dim); background: rgba(0,217,126,0.06); }
+.sig-pill.neutral    { color: var(--dim);   border-color: var(--border);    background: transparent; }
+
+.sig-empty {
+  font-size: 10px;
+  color: var(--dim);
+  padding: 0.5rem 0;
+  letter-spacing: 0.06em;
+}

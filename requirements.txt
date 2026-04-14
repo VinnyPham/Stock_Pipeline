@@ -1,0 +1,8 @@
+requests
+pandas
+python-dotenv
+kafka-python
+pyspark
+pyarrow
+duckdb
+apache-airflow

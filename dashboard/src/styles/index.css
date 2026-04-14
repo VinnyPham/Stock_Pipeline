@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --bg:        #050507;
+  --bg-raised: #08080c;
+  --bg-panel:  #0a0a10;
+  --border:    #141420;
+  --border-hi: #1e1e30;
+  --dim:       #e8e8f8;
+  --muted:     #e8e8f8;
+  --subtle:    #7070a0;
+  --text:      #e8e8f8;
+  --bright:    #e8e8f8;
+  --amber:     #f0a500;
+  --amber-dim: #7a5200;
+  --green:     #00d97e;
+  --green-dim: #004d2b;
+  --red:       #ff4d6a;
+  --red-dim:   #4d0015;
+  --blue:      #4d9fff;
+  --purple:    #9b7fff;
+  --mono:      'IBM Plex Mono', monospace;
+  --sans:      'IBM Plex Sans', sans-serif;
+}
+
+*, *::before, *::after {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+
+html { font-size: 14px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  /* Subtle scanline overlay */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.04) 2px,
+      rgba(0,0,0,0.04) 4px
+    );
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--dim); border-radius: 2px; }

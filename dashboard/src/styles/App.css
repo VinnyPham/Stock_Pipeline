@@ -1,0 +1,302 @@
+/* ── Layout ─────────────────────────────────────────────────────────────────── */
+.app {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── Top bar ────────────────────────────────────────────────────────────────── */
+.topbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 2rem;
+  height: 48px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-panel);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-mark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--amber);
+  border-radius: 2px;
+  position: relative;
+}
+.brand-mark::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: var(--amber);
+  border-radius: 1px;
+  animation: brand-pulse 3s ease-in-out infinite;
+}
+@keyframes brand-pulse {
+  0%,100% { opacity: 1; }
+  50%      { opacity: 0.4; }
+}
+
+.brand-name {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--bright);
+  text-transform: uppercase;
+}
+
+.topbar-pipeline {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.pipe-step {
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--dim);
+  text-transform: uppercase;
+  padding: 0 0.6rem;
+  border-right: 1px solid var(--border);
+}
+.pipe-step:last-child { border-right: none; }
+.pipe-step.active { color: var(--amber); }
+
+.topbar-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50%      { opacity: 0.2; }
+}
+
+/* ── Main content ───────────────────────────────────────────────────────────── */
+.main {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  grid-template-rows: auto 1fr auto;
+  flex: 1;
+}
+
+.main-left {
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.main-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Section wrappers ───────────────────────────────────────────────────────── */
+.section {
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 1.75rem;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.section-label {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.section-meta {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--dim);
+}
+
+/* ── Signal badges ──────────────────────────────────────────────────────────── */
+.signal-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.sig-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid;
+  border-radius: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.sig-tag-label {
+  color: var(--muted);
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-right: 0.15rem;
+}
+.sig-tag.overbought { border-color: var(--red-dim);  color: var(--red);   background: rgba(255,77,106,0.06); }
+.sig-tag.oversold   { border-color: var(--green-dim); color: var(--green); background: rgba(0,217,126,0.06); }
+.sig-tag.neutral    { border-color: var(--border-hi); color: var(--muted); background: transparent; }
+.sig-tag.none       { border-color: var(--border);    color: var(--dim);   background: transparent; }
+
+/* ── Chart panel ────────────────────────────────────────────────────────────── */
+.chart-section {
+  padding: 1.25rem 1.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.chart-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.chart-title {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.chart-legend {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.leg {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 9px;
+  color: var(--dim);
+  letter-spacing: 0.06em;
+}
+
+.leg-swatch {
+  width: 16px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+/* ── Right panel ────────────────────────────────────────────────────────────── */
+.right-section {
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 1.5rem;
+  flex: 1;
+  overflow: auto;
+}
+
+.right-section:last-child { border-bottom: none; }
+
+/* ── Loading / error ────────────────────────────────────────────────────────── */
+.fullscreen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.fs-label {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  animation: fade 1.4s ease-in-out infinite;
+}
+.fs-label.err { color: var(--red); animation: none; }
+
+@keyframes fade {
+  0%,100% { opacity: 1; }
+  50%      { opacity: 0.3; }
+}
+
+.fs-sub {
+  font-size: 10px;
+  color: var(--dim);
+  letter-spacing: 0.1em;
+}
+
+.fs-cmd {
+  font-size: 11px;
+  color: var(--green);
+  border: 1px solid var(--green-dim);
+  padding: 0.5rem 1.25rem;
+  border-radius: 2px;
+  background: rgba(0,217,126,0.04);
+  margin-top: 0.5rem;
+}
+
+.retry-btn {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--amber);
+  background: transparent;
+  border: 1px solid var(--amber-dim);
+  padding: 0.5rem 1.5rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  margin-top: 0.5rem;
+}
+.retry-btn:hover {
+  background: rgba(240,165,0,0.08);
+  border-color: var(--amber);
+}
+
+/* ── Chart loading overlay ──────────────────────────────────────────────────── */
+.chart-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 240px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--dim);
+  text-transform: uppercase;
+  animation: fade 1.2s ease-in-out infinite;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .main { grid-template-columns: 1fr; }
+  .main-left { border-right: none; }
+  .main-right { border-top: 1px solid var(--border); }
+}

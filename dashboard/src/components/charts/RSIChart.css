@@ -1,0 +1,23 @@
+.rsi-svg {
+  width: 100%;
+  overflow: visible;
+  display: block;
+  margin-bottom: -4px;
+}
+
+.r-axis {
+  font-size: 9px;
+  fill: var(--muted);
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.rsi-empty {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--dim);
+  text-transform: uppercase;
+}
