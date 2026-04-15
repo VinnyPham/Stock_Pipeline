@@ -125,7 +125,7 @@ npm start
 ---
 
 ## Screenshots
-<img width="1352" height="523" alt="stock pipeline demo 2" src="https://github.com/user-attachments/assets/e90244bb-2ac4-44ad-a5b3-c429df734ad3" />
 <img width="1918" height="906" alt="stock pipeline demo" src="https://github.com/user-attachments/assets/4f59ed7f-3e3d-448d-9de9-75c93b735cf2" />
+<img width="1352" height="523" alt="stock pipeline demo 2" src="https://github.com/user-attachments/assets/e90244bb-2ac4-44ad-a5b3-c429df734ad3" />
 
 
